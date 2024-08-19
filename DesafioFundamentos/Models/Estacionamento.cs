@@ -1,16 +1,10 @@
 namespace DesafioFundamentos.Models
 {
-    public class Estacionamento
+    public class Estacionamento(decimal precoInicial, decimal precoPorHora)
     {
-        private decimal precoInicial = 0;
-        private decimal precoPorHora = 0;
-        private List<string> veiculos = new List<string>();
-
-        public Estacionamento(decimal precoInicial, decimal precoPorHora)
-        {
-            this.precoInicial = precoInicial;
-            this.precoPorHora = precoPorHora;
-        }
+        private decimal precoInicial = precoInicial;
+        private decimal precoPorHora = precoPorHora;
+        private List<string> veiculos = [];
 
         public void AdicionarVeiculo()
         {
@@ -36,7 +30,7 @@ namespace DesafioFundamentos.Models
                 // TODO: Realizar o seguinte cálculo: "precoInicial + precoPorHora * horas" para a variável valorTotal                
                 // *IMPLEMENTE AQUI*
                 int horas = 0;
-                decimal valorTotal = 0; 
+                decimal valorTotal = 0;
 
                 // TODO: Remover a placa digitada da lista de veículos
                 // *IMPLEMENTE AQUI*
@@ -52,11 +46,14 @@ namespace DesafioFundamentos.Models
         public void ListarVeiculos()
         {
             // Verifica se há veículos no estacionamento
-            if (veiculos.Any())
+            if (veiculos.Count != 0)
             {
                 Console.WriteLine("Os veículos estacionados são:");
                 // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
-                // *IMPLEMENTE AQUI*
+                foreach (string veiculo in veiculos)
+                {
+                    Console.WriteLine(veiculo);
+                }
             }
             else
             {
